@@ -5,8 +5,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "node deploy-commands.js && node main.js",
-    "bot": "node main.js",
+    "start": "node main.js",
     "test": "nodemon --exec 'node deploy-commands-test.js && node main.js'",
     "deploy-commands": "node deploy-commands.js",
     "test-commands": "node deploy-commands-test.js"
