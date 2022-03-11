@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v9';
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 const require = createRequire(import.meta.url); // construct the require method
-const { token, clientId } = require("./config.json");
 import glob from 'glob-promise';
 
 let commandFiles = [];
@@ -10,7 +10,7 @@ let commands = [];
 
 
 
-const rest = new REST({ version: '9' }).setToken(token);
+const rest = new REST({ version: '9' }).setToken(process.env.token);
 
 (async () => {
 
@@ -25,7 +25,7 @@ const rest = new REST({ version: '9' }).setToken(token);
 
   console.log(`Started refreshing ${commands.length} application (/) commands.`);
   await rest.put(
-    Routes.applicationCommands(clientId),
+    Routes.applicationCommands(process.env.clientId),
     { body: commands },
   ).then(() => {
     console.log(`Successfully reloaded ${commands.length} application (/) commands.`);

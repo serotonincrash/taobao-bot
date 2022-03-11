@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v9';
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 const require = createRequire(import.meta.url); // construct the require method
-const { token, clientId } = require("./config.json");
 import glob from 'glob-promise';
 
 let commandFiles = [];
@@ -11,7 +11,7 @@ let commands = [];
 const guildIds = ['657601463350067220', '742651131653521499']
 
 
-const rest = new REST({ version: '9' }).setToken(token);
+const rest = new REST({ version: '9' }).setToken(process.env.token);
 
 (async () => {
 
@@ -27,7 +27,7 @@ const rest = new REST({ version: '9' }).setToken(token);
   console.log(`Started refreshing ${commands.length} application (/) commands.`);
   for (const guildId of guildIds) {
     await rest.put(
-      Routes.applicationGuildCommands(clientId,guildId),
+      Routes.applicationGuildCommands(process.env.clientId,guildId),
       { body: commands },
     ).then(() => {
       console.log(`Successfully reloaded ${commands.length} application (/) commands for guild ${guildId}.`);

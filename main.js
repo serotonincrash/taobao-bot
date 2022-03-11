@@ -1,7 +1,7 @@
+import 'dotenv/config';
 import { Client, Collection, Intents } from 'discord.js';
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 const require = createRequire(import.meta.url); // construct the require method
-const { token } = require("./config.json");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 import glob from 'glob-promise';
 
@@ -61,4 +61,4 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.login(token);
+client.login(process.env.token);
