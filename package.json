@@ -1,7 +1,7 @@
 {
-  "name": "botpointpigeon-reborn",
+  "name": "taobao-bot",
   "version": "1.0.0",
-  "description": "Bot for gradepointpigeon discord server",
+  "description": "Bot for taobao server",
   "main": "main.js",
   "type": "module",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gradepointpigeon/botpointpigeon-reborn.git"
+    "url": "git+https://github.com/serotonincrash/taobao-bot.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gradepointpigeon/botpointpigeon-reborn/issues"
+    "url": "https://github.com/serotonincrash/taobao-bot/issues"
   },
-  "homepage": "https://github.com/gradepointpigeon/botpointpigeon-reborn#readme",
+  "homepage": "https://github.com/serotonincrash/taobao-bot",
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
     "@discordjs/rest": "^0.1.0-canary.0",
