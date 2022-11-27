@@ -105,3 +105,10 @@ dist
 
 # config file
 config.json
+
+# fly.io run helper
+fly.toml
+
+# docker
+Dockerfile
+.dockerignore
